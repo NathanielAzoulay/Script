@@ -19,19 +19,19 @@ errorString="${errorString},we have less than 10 character"
 fi
 
 if [[ ! $Password =~  [1-9] ]];then
-errorString="${errorString},il y pas un chiffre"
+errorString="${errorString}You don't have a number"
 fi
 
 if [[ ! $Password =~  [a-z] ]];then
-errorString=" ${errorString},il y pas de petit char"
+errorString=" ${errorString}You don't have a little letter"
 fi
 
 if [[ ! $Password =~  [A-Z] ]];then
-errorString="${errorString},il y pas de grand char"
+errorString="${errorString}You don't have a big letter"
 fi
 
 if [ "$errorString" = "" ];then
-echo -e "${GREEN}tout est ok ${NC}"
+echo -e "${GREEN} it's good password ${NC}"
 exit 0 
 else
 echo -e "${RED} $errorString ${NC}"
